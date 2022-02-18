@@ -10,8 +10,14 @@
 Para a execução das implementações utilize: 
 * seu IDE de preferência (sugestão VS Code)
 * GCC
-_Para compilar o codigo utilize dos comando: gcc <ARQUIVO.c> -o ARQUIVO.exe -ansi -Wall -pedantic_
+
+0. Certifique-se de estar no diretório do arquivos fonte C.
+1. Para compilar o codigo utilize dos comando: gcc _SOURCE.c_ -o _BIN.exe_ -ansi -Wall -pedantic
+2. Para executar ./_BIN.exe_
+
+_Obs.: SOURCE.c e BIN.exe são apenas exemplos para ilustar os comandos completos._
 
 ## Implementações ED2
-* Aula 0: Revisão Funções e Ponteiros
+* Aula 1: Revisão Funções e Ponteiros
+* Aula 2: Revisão de Lista (Sequencial e Encadeadas)
 

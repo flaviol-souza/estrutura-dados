@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+/* LISTA SEQUENCIAL --- Created on Feb 12 2022
+*  AUTHOR : Flavio Souza
+*  DESCRIPTION :
+*       Implementação de uma lista sequencial com as operações básicas.  
+*/
 #define INICIO   1
 #define MAXTAM   1000
 
@@ -45,6 +49,7 @@ void retira(LISTA *lista, int x_i) {
     for (aux = x_i; aux < lista->ultimo; aux++){
         lista->itens[aux - 1] = lista->itens[aux];
     }
+    lista->itens[lista->ultimo] = 0;
     printf("\nItem da posicao %i removido.", x_i);
 }  
 
@@ -63,7 +68,7 @@ void imprime(LISTA lista) {
 } 
 
 int localizar(LISTA *lista, int valor){
-    /*Crie um metodo capaz de localizar um item de valor na lista*/
+    /*Crie uma funcao capaz de localizar um item de valor na lista*/
     return 0;
 }
 
@@ -80,7 +85,7 @@ int main(int argc, char *argv[]) {
     imprime(lista);
 
     retira(&lista, 2);
-
+    retira(&lista, 109);
     imprime(lista);
 
     return 0;

@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+/* LISTA ENCADEADA --- Created on Feb 12 2022
+*  AUTHOR : Flavio Souza
+*  DESCRIPTION :
+*       Implementação de uma lista encadeada com as operações básicas. 
+*/
 #define VALOR int
 
 typedef struct no

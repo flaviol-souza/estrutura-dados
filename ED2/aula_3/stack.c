@@ -99,10 +99,14 @@ STACK *subStack(STACK *stack, char value)
     /*A considerar uma pilha (stack) e um valor (E),
       construa uma função capaz de extrair uma subpilha
       da pilha principal tendo o valor como base da subpilha.
-      Ex.:
+      Ex.1:
             stack -> IFSP-CTD-ED2 (no qual I é a base da pilha e 2 é o topo)
             value -> E
             output -> ED2
+       Ex.2:
+            stack -> IFSP-CTD-ED2 (no qual I é a base da pilha e 2 é o topo)
+            value -> T
+           output -> TD-ED2
     */
    return NULL;
 }

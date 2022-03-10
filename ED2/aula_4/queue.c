@@ -9,7 +9,7 @@
 
 typedef struct
 {
-    char values[MAXTAM];
+    int values[MAXTAM];
     int first, last;
 } QUEUE;
 
@@ -24,7 +24,7 @@ int isEmpty(QUEUE queue)
     return (queue.first == queue.last && queue.first == 0);
 }
 
-void insert(QUEUE *queue, char value)
+void insert(QUEUE *queue, int value)
 {
     if (queue->last == MAXTAM)
     {
@@ -36,9 +36,9 @@ void insert(QUEUE *queue, char value)
     queue->last++;
 }
 
-char retrive(QUEUE *queue)
+int retrive(QUEUE *queue)
 {
-    char value;
+    int value;
     if (isEmpty(*queue))
     {
         printf("Erro fila esta vazia\n");
@@ -47,9 +47,10 @@ char retrive(QUEUE *queue)
     value = queue->values[queue->first];
     queue->first++;
 
-    if(queue->first == MAXTAM){
-       queue->first = 0;
-       queue->last = 0; 
+    if (queue->first == MAXTAM)
+    {
+        queue->first = 0;
+        queue->last = 0;
     }
 
     return value;
@@ -66,8 +67,24 @@ void print(QUEUE queue)
     printf("\nFILA:\n\t");
     for (aux = queue.first; aux <= (queue.last - 1); aux++)
     {
-        printf(" %c", queue.values[aux]);
+        printf(" %i", queue.values[aux]);
     }
+}
+
+QUEUE *justPositive(QUEUE *queue)
+{
+    /*Dada uma fila de inteiros, escreva um programa que exclua todos os números negativos
+    sem alterar a posição dos outros elementos da fila.
+
+      Ex.1:
+            queue -> 1 -5 -9 10 19 2 -21 19 -4 -6 8
+            output -> 1 10 19 2 19
+       Ex.2:
+            stack -> -4 -7 -9 -2 7 11 -8 39 78 -9 81 47
+            output -> 7 11 39 78 81 47
+    */
+
+    return NULL;
 }
 
 int main()
@@ -76,15 +93,15 @@ int main()
 
     init(&fila);
 
-    insert(&fila, 'A');
-    insert(&fila, 'B');
-    insert(&fila, 'C');
+    insert(&fila, 1);
+    insert(&fila, -9);
+    insert(&fila, 21);
     print(fila);
 
     retrive(&fila);
     print(fila);
 
-    insert(&fila, 'D');
+    insert(&fila, 10);
     print(fila);
 
     retrive(&fila);

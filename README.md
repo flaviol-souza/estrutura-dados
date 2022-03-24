@@ -22,5 +22,6 @@ _Obs.: SOURCE.c e BIN.exe são apenas exemplos para ilustar os comandos completo
 * Aula 2: Revisão de Lista (Sequencial e Encadeadas)
 * Aula 3: Revisão de Pilha
 * Aula 4: Revisão de Fila (Linear e Circular)
+* Aula 5: Ordenação Interna (Insertion)
 
 

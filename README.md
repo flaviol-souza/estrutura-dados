@@ -12,7 +12,7 @@ Para a execução das implementações utilize:
 * GCC
 
 0. Certifique-se de estar no diretório do arquivos fonte C.
-1. Para compilar o codigo utilize dos comando: gcc _SOURCE.c_ -o _BIN.exe_ -ansi -Wall -pedantic
+1. Para compilar o codigo utilize dos comando: gcc _SOURCE.c_ -o _BIN.exe_ -ansi -Wall -pedantic -std=c99
 2. Para executar ./_BIN.exe_
 
 _Obs.: SOURCE.c e BIN.exe são apenas exemplos para ilustar os comandos completos._
@@ -22,6 +22,6 @@ _Obs.: SOURCE.c e BIN.exe são apenas exemplos para ilustar os comandos completo
 * Aula 2: Revisão de Lista (Sequencial e Encadeadas)
 * Aula 3: Revisão de Pilha
 * Aula 4: Revisão de Fila (Linear e Circular)
-* Aula 5: Ordenação Interna (Insertion)
+* Aula 5: Ordenação Interna (Bubble, Insertion, Merge, Quick, Selection, e Shell)
 
 

@@ -198,6 +198,10 @@ void printTree(NODE *node, int level)
     }
 }
 
+int average(int level) {
+    /*implemente a função capaz de calcular o valor médio de todos os itens de nível (level) informado.*/
+}
+
 int main()
 {
     NODE *root = NULL;

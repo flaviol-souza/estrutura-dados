@@ -42,7 +42,7 @@ int randomStep()
         return 3;
 }
 
-APPOINTMENT *scheduleAppointment(int appointmentType, int crm)
+APPOINTMENT *scheduleAppointment(int appointmentType, int crm, int day)
 {
     return NULL;
 }

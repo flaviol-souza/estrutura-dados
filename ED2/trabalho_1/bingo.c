@@ -17,6 +17,11 @@ int randomNewPlayer()
     return rand() & 1;
 }
 
+int randomStartPlayer()
+{
+    return rand()%30;
+}
+
 CARD *buildCard(int playerId)
 {
     return NULL;
@@ -35,7 +40,7 @@ int drawNumber()
 int main()
 {
     CARD *c;
-    int newDraw = 0, countPlayers = 0, beginPlayers = randomNewPlayer();
+    int newDraw = 0, countPlayers = 0, beginPlayers = randomStartPlayer();
     while (countPlayers <= beginPlayers)
     {
         c = buildCard(countPlayers++);

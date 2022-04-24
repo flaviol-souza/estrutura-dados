@@ -4,18 +4,13 @@
 
 typedef struct word
 {
-
+    int i;
 } WORD;
 
-int randomSize()
+char *randomPalavra(int wordSize)
 {
-    return rand() % 10;
-}
-
-char *randomPalavra()
-{
-    int wordSize = rand() % 10;
-    char word[wordSize];
+    char *word;
+    word = (char*)malloc((wordSize) * sizeof(char));
     for (int i = 0; i < wordSize; i++)
     {
         word[i] = (rand() % 26) + 65;
@@ -46,11 +41,12 @@ WORD *sort(WORD *morse)
 
 int main()
 {
-    int count = 0;
+    int r, count = 0;
     char *morse;
     while (count < 10)
     {
-        morse = translateToMorse(randomPalavra(randomSize()));
+        r = rand() % 10;
+        morse = translateToMorse(randomPalavra(r));
         translateToPortugues(morse);
         sort(morse);
         count++;

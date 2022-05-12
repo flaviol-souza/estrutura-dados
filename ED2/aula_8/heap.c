@@ -106,27 +106,27 @@ void up(HEAP *heap, int idx)
     }
 }
 
-int insert(HEAP *heap, int new)
+void insert(HEAP *heap, int new)
 {
     heap->node = (NODE *)realloc(heap->node, sizeof(NODE) * (heap->n + 2));
     heap->n++;
     heap->node[heap->n].priority = new;
     up(heap, heap->n);
-    return heap->n;
 }
 
 int delete (HEAP *heap)
 {
+    int major_priority = heap->node[1].priority;
     heap->node[1] = heap->node[heap->n];
     heap->n--;
     heap->node = (NODE *)realloc(heap->node, sizeof(NODE) * (heap->n + 1));
     down(heap, 1);
-    return heap->n;
+    return major_priority;
 }
 
-HEAP *sort(HEAP *heap)
+NODE *sort(HEAP *heap)
 {
-    /*implemente a função capaz de ordenar os NODEs da HEAP em uma sequencia decrescente.*/
+    /*implemente a função capaz de ordenar os NODEs da HEAP em uma sequencia crescente.*/
     return NULL;
 }
 

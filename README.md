@@ -24,5 +24,10 @@ _Obs.: SOURCE.c e BIN.exe são apenas exemplos para ilustar os comandos completo
 * Aula 4: Revisão de Fila (Linear e Circular)
 * Aula 5: Ordenação Interna (Bubble, Insertion, Merge, Quick, Selection, e Shell)
 * Aula 6: Árvore Binária
+* Aula 7: Árvore B
+* Aula 8: Heap
+
+## Trabalho Temático ED2
+
 
 

@@ -26,6 +26,7 @@ _Obs.: SOURCE.c e BIN.exe são apenas exemplos para ilustar os comandos completo
 * Aula 6: Árvore Binária
 * Aula 7: Árvore B
 * Aula 8: Heap
+* Aula 9: Hash
 
 ## Trabalho Temático ED2
 

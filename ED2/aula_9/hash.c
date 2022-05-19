@@ -2,13 +2,13 @@
 #include <stdio.h>
 #include <string.h>
 
-/* ALGORITMOS HASHING (por ARRANJADORES) --- Created on May 05 2022
+/* ALGORITMOS HASHING --- Created on May 05 2022
  *  AUTHOR : Flavio Souza
  *  DESCRIPTION :
  *       Implementação de tabela Hash.
  */
 
-#define CAPACITY 50000
+#define SIZEHASH 50000
 
 typedef struct item
 {
@@ -25,7 +25,6 @@ typedef struct hash
 
 HASH *init(int size)
 {
-    // Creates a new HashTable
     HASH *hash = (HASH *)malloc(sizeof(HASH));
     hash->size = size;
     hash->count = 0;
@@ -44,8 +43,8 @@ long hashFunction(char *key)
     for (int j = 0; key[j]; j++){
         idx += key[j];
     }
-    //printf("key:%s -> Index:%i\n", key, idx % CAPACITY);    
-    return idx % CAPACITY;
+    ///printf("key:%s -> Index:%i\n", key, idx % SIZEHASH);    
+    return idx % SIZEHASH;
 }
 
 ITEM *createItem(char *key, char *value)
@@ -128,7 +127,7 @@ void printHash(HASH *hash)
 
 int main()
 {
-    HASH *hash = init(CAPACITY);
+    HASH *hash = init(SIZEHASH);
     put(hash, "240.498.140-48", "Luis Emanuel Ramos");
     put(hash, "441.325.708-19", "Augusto Rafael Luis Ribeiro");
     put(hash, "721.602.703-50", "Mariana Fatima Raimunda da Rocha");

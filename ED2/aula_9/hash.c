@@ -40,10 +40,11 @@ HASH *init(int size)
 long hashFunction(char *key)
 {
     long idx = 0;
-    for (int j = 0; key[j]; j++){
-        idx += key[j];
+    for (int i = 0; key[i]; i++)
+    {
+        idx += key[i];
     }
-    ///printf("key:%s -> Index:%i\n", key, idx % SIZEHASH);    
+    ///printf("key:%s -> Index:%i\n", key, idx % SIZEHASH);
     return idx % SIZEHASH;
 }
 
@@ -78,7 +79,8 @@ void put(HASH *hash, char *key, char *value)
     }
 }
 
-void removeItem(HASH *hash, char *key){
+void removeItem(HASH *hash, char *key)
+{
     if (hash->count <= 0)
     {
         printf("Hash esta vazia\n");
@@ -114,7 +116,7 @@ char *search(HASH *hash, char *key)
 }
 
 void printHash(HASH *hash)
-{    
+{
     printf("\n---- HASH (Size: %i; Count: %i)\n", hash->size, hash->count);
     for (int i = 0; i < hash->size; i++)
     {

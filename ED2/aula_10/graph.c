@@ -69,9 +69,12 @@ GRAPH *insert(GRAPH *graph, int value)
 void insertEdgeWay(GRAPH *graph, int value_a, int value_b)
 {
     GRAPH *head = search(graph, value_a);
-    VERTEX *egde = initVertex(value_b);
-    egde->next = head->edges;
-    head->edges = egde;
+    if (head != NULL)
+    {
+        VERTEX *edge = initVertex(value_b);
+        edge->next = head->edges;
+        head->edges = edge;
+    }
 }
 
 void insertEdge(GRAPH *graph, int value_a, int value_b)
@@ -84,27 +87,8 @@ void insertEdge(GRAPH *graph, int value_a, int value_b)
     }
 }
 
-void delete(GRAPH *graph, int value)
-{
-    GRAPH *previous = NULL;
-    while ((graph != NULL) && (graph->value != value))
-    {
-        previous = graph;
-        graph = graph->next;
-    }
-    if (graph != NULL)
-    {
-        if (previous != NULL)
-        {
-            previous->next = graph->next;
-        }
-        free(graph->edges);
-        free(graph);
-    }
-}
-
 void deleteEgdeWay(GRAPH *graph, int value_a, int value_b)
-{
+{           
     GRAPH *head = search(graph, value_a);
     if (head != NULL)
     {
@@ -137,6 +121,32 @@ void deleteEgde(GRAPH *graph, int value_a, int value_b)
     }
 }
 
+void delete (GRAPH *graph, int value)
+{
+    GRAPH *root = graph, *previous = NULL;
+    VERTEX *edge = NULL;
+    while ((graph != NULL) && (graph->value != value))
+    {
+        previous = graph;
+        graph = graph->next;
+    }
+    if (graph != NULL)
+    {
+        if (previous != NULL)
+        {
+            previous->next = graph->next;
+        }
+        edge = graph->edges;
+        while (edge != NULL)
+        {
+            deleteEgdeWay(root, edge->value, graph->value);
+            edge = edge->next;
+        }
+        free(graph->edges);
+        free(graph);
+    }
+}
+
 void print(GRAPH *graph)
 {
     GRAPH *current = graph;
@@ -155,12 +165,16 @@ void print(GRAPH *graph)
     }
 }
 
-int qtdVertex(GRAPH *graph){
-    ///Dado um grafo (GRAPH) calcule a quantidade de vertices, cuidado com a repetição para grafos não direcionados
+int qtdVertex(GRAPH *graph)
+{
+    /// Dado um grafo (GRAPH) calcule a quantidade de vertices, cuidado com a repetição para grafos não direcionados
+    return 0; // FALSE
 }
 
-int equalsGraph(GRAPH *graph_a, GRAPH *graph_b){
-    ///Dado dos grafos, implemene um algoritmo que vefique se são eguais, cuidados com os grafos direcionados
+int equalsGraph(GRAPH *graph_a, GRAPH *graph_b)
+{
+    /// Dado dos grafos, implemene um algoritmo que vefique se são eguais, cuidados com os grafos direcionados
+    return 0; // FALSE
 }
 
 int main()
@@ -170,13 +184,13 @@ int main()
     graph = insert(graph, 2);
     graph = insert(graph, 3);
 
-    insertEdge(graph,1,3);
-    insertEdge(graph,1,4);
-    insertEdge(graph,2,4);
+    insertEdge(graph, 1, 3);
+    insertEdge(graph, 1, 4);
+    insertEdge(graph, 2, 4);
 
     deleteEgde(graph, 4, 2);
 
-    delete (graph, 1);
+    delete(graph, 1);
     print(graph);
 
     return 0;

@@ -38,7 +38,7 @@ int insert(LIST *list, int value)
     return 1; /*True*/
 }
 
-int delete (LIST *list, NODE *n)
+int delete(LIST *list, NODE *no)
 {
     NODE *node, *nodePrevious = NULL;
     if (isEmpty(list) == 1)
@@ -47,7 +47,7 @@ int delete (LIST *list, NODE *n)
     node = list->first;
     while (node != NULL)
     {
-        if (node->value == nodePrevious->value && node->next == nodePrevious->next)
+        if (node->value == no->value && node->next == no->next)
         {
             if (nodePrevious == NULL)
             {
